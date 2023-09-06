@@ -35,7 +35,8 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        {isExpanded ? <input
+        {isExpanded ? 
+        <input
           name="title"
           onChange={handleChange}
           value={note.title}
@@ -47,11 +48,11 @@ function CreateArea(props) {
           onChange={handleChange}
           value={note.content}
           placeholder="Take a note..."
-          rows={isExpanded ? 3 : 1}
+          rows={isExpanded ? 4 : 1}
         />
         <Zoom in={isExpanded}>
           <Fab onClick={submitNote}>
-            <AddIcon/>
+            <AddIcon color="primary"/>
           </Fab>
         </Zoom>
       </form>
