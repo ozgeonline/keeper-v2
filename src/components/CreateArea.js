@@ -4,12 +4,15 @@ import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
 
 function CreateArea(props) {
+
   const [isExpanded,setExpanded] = useState(false)
+
   const [note, setNote] = useState({
     title: "",
     content: ""
   });
 
+  //input & textarea
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -20,14 +23,18 @@ function CreateArea(props) {
       };
     });
   }
+
+  //addIcon
   function submitNote(event) {
     props.onAdd(note);
     setNote({
       title: "",
       content: ""
     });
-    event.preventDefault();
+    event.preventDefault(); //olay engelleyici 
   }
+
+  //textarea zoom
   function expand(){
     setExpanded(true)
   }
@@ -41,7 +48,8 @@ function CreateArea(props) {
           onChange={handleChange}
           value={note.title}
           placeholder="Title"
-        /> : null}
+        />
+         : null}
         <textarea
           name="content"
           onClick={expand}

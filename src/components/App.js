@@ -8,12 +8,14 @@ import '../App.css';
 function App() {
   const [notes, setNotes] = useState([]);
 
+  //CreateArea
   function addNote(newNote) {
     setNotes(prevNotes => {
       return [...prevNotes, newNote];
     });
   }
 
+  //Note
   function deleteNote(id) {
     setNotes(prevNotes => {
       return prevNotes.filter((noteItem, index) => {
